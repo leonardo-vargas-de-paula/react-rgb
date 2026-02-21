@@ -1,6 +1,10 @@
 .color-box {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 1.5rem;
-    border-color: rgb(0, 0, 0);
+  width: 8rem;
+  height: 8rem;
+  border-radius: 1.5rem;
+}
+
+.color-box.is-too-light {
+  border: 1px solid;
+  border-color: rgb(136, 135, 135);
 }
