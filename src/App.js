@@ -21,21 +21,25 @@ function App() {
 
 
   return (
-    <>
-      
-      <h3>Red: {red}</h3>
-      <RangeInput min="0" max="255" value={red} onChange={changeToRed} />
+    <div className="App">
 
-      
-      <h3>Green: {green}</h3>
-      <RangeInput min="0" max="255" value={green} onChange={changeToGreen} />
-      
-      <h3>Blue: {blue}</h3>
-      <RangeInput min="0" max="255" value={blue} onChange={changeToBlue} /> 
+      <div className="color-inputs">
+        <h3>Red: {red}</h3>
+        <RangeInput min="0" max="255" value={red} onChange={changeToRed} />
 
-      <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`}/>
 
-    </>
+        <h3>Green: {green}</h3>
+        <RangeInput min="0" max="255" value={green} onChange={changeToGreen} />
+
+        <h3>Blue: {blue}</h3>
+        <RangeInput min="0" max="255" value={blue} onChange={changeToBlue} />
+      </div>
+
+
+
+      <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} />
+
+    </div>
 
   );
 }
