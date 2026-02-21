@@ -7,10 +7,6 @@ function App() {
   const [green, setGreen] = useState(0);
   const [blue, setBlue] = useState(0);
 
-  const [history, setHistory] = useState([]);
-
-
-
   const changeToRed = ({ target }) => {
     setRed(parseInt(target.value));
   }
@@ -23,6 +19,14 @@ function App() {
     setBlue(parseInt(target.value));
   }
 
+  const [history, setHistory] = useState([]);
+
+
+  const saveColor = () => {
+    setHistory(h => 
+    [[red, green, blue], ...h]
+    )
+  }
 
   return (
     <div className="App">
@@ -41,11 +45,11 @@ function App() {
 
       <div className="color-container">
         <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} />
-        <button className='history-button'>Save Color</button>
+        <button className='history-button' onClick={saveColor}>Save Color</button>
 
       </div>
 
-      
+
 
     </div>
 
