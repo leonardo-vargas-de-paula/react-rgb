@@ -17,6 +17,12 @@ function App() {
     setBlue(parseInt(target.value));
   }
 
+  const SVGShape = () => (
+    <svg width="200" height="200" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="50" fill="green" />
+    </svg>
+  );
+
   return (
     <>
       <input type="range" min="0" max="255" value={red} onChange={changeToRed} />
@@ -27,6 +33,10 @@ function App() {
 
       <input type="range" min="0" max="255" value={blue} onChange={changeToBlue} />
       <h3>Blue: {blue}</h3>
+
+      <div>
+        <SVGShape />
+      </div>
     </>
 
   );
