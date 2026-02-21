@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ColorBox from './components/ColorBox';
 
 function App() {
   const [red, setRed] = useState(0);
@@ -28,7 +29,9 @@ function App() {
 
       <input type="range" min="0" max="255" value={blue} onChange={changeToBlue} />
       <h3>Blue: {blue}</h3>
-      
+
+      <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`}/>
+
     </>
 
   );
