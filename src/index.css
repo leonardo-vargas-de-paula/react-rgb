@@ -1,3 +1,16 @@
 body {
   font-family: sans-serif;
 }
+
+.App{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+}
+
+.color-inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-right: 2rem;
+}
