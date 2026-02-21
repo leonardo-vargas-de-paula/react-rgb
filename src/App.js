@@ -7,6 +7,10 @@ function App() {
   const [green, setGreen] = useState(0);
   const [blue, setBlue] = useState(0);
 
+  const [history, setHistory] = useState([]);
+
+
+
   const changeToRed = ({ target }) => {
     setRed(parseInt(target.value));
   }
@@ -35,9 +39,13 @@ function App() {
         <RangeInput min="0" max="255" value={blue} onChange={changeToBlue} />
       </div>
 
+      <div className="color-container">
+        <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} />
+        <button className='history-button'>Save Color</button>
 
+      </div>
 
-      <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} />
+      
 
     </div>
 
