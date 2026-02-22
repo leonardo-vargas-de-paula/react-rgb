@@ -56,6 +56,7 @@ function App() {
 
       <div className="history-container">
         <h2>History</h2>
+        <History data={history} />  
       </div>
 
 
