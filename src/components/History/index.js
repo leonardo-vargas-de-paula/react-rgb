@@ -9,7 +9,6 @@ function History({ data }) {
     )
     return (
         <section>
-            <h3>History</h3>
             <ul>
                 {data.map(getColor)}
             </ul>
