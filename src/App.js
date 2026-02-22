@@ -52,6 +52,8 @@ function App() {
         </div>
       </div>
 
+      <hr/>
+
       <div className="history-container">
         <h2>History</h2>
       </div>
