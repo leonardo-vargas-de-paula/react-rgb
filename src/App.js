@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ColorBox from './components/ColorBox';
 import RangeInput from './components/RangeInput';
+import History from './components/History';
 
 function App() {
   const [red, setRed] = useState(0);
@@ -23,31 +24,38 @@ function App() {
 
 
   const saveColor = () => {
-    setHistory(h => 
-    [[red, green, blue], ...h]
+    setHistory(h =>
+      [[red, green, blue], ...h]
     )
   }
 
   return (
     <div className="App">
 
-      <div className="color-inputs">
-        <h3>Red: {red}</h3>
-        <RangeInput min="0" max="255" value={red} onChange={changeToRed} />
-
-
-        <h3>Green: {green}</h3>
-        <RangeInput min="0" max="255" value={green} onChange={changeToGreen} />
-
-        <h3>Blue: {blue}</h3>
-        <RangeInput min="0" max="255" value={blue} onChange={changeToBlue} />
-      </div>
-
       <div className="color-container">
-        <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} />
-        <button className='history-button' onClick={saveColor}>Save Color</button>
+        <div className="color-inputs">
+          <h3>Red: {red}</h3>
+          <RangeInput min="0" max="255" value={red} onChange={changeToRed} />
 
+
+          <h3>Green: {green}</h3>
+          <RangeInput min="0" max="255" value={green} onChange={changeToGreen} />
+
+          <h3>Blue: {blue}</h3>
+          <RangeInput min="0" max="255" value={blue} onChange={changeToBlue} />
+        </div>
+
+        <div className="color-view">
+          <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} />
+          <button className='history-button' onClick={saveColor}>Save Color</button>
+
+        </div>
       </div>
+
+      <div className="history-container">
+        <h2>History</h2>
+      </div>
+
 
 
 
