@@ -3,6 +3,7 @@ import ColorBox from './components/ColorBox';
 import RangeInput from './components/RangeInput';
 import History from './components/History';
 
+
 function App() {
   const [red, setRed] = useState(0);
   const [green, setGreen] = useState(0);
@@ -29,6 +30,8 @@ function App() {
     )
   }
 
+  const backgroundColor = (r,g,b) => `rgb(${r}, ${g}, ${b})`;
+
   return (
     <div className="App">
 
@@ -46,7 +49,7 @@ function App() {
         </div>
 
         <div className="color-view">
-          <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} type="main"/>
+          <ColorBox backgroundColor={backgroundColor(red,green, blue)} type="main"/>
           <button className='history-button' onClick={saveColor}>Save Color</button>
 
         </div>
@@ -56,7 +59,7 @@ function App() {
 
       <div className="history-container">
         <h2>History</h2>
-        <History data={history} />  
+        <History data={history} backgroundColor={backgroundColor}/>  
       </div>
 
 
