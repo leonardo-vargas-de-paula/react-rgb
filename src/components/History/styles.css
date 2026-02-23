@@ -1,0 +1,10 @@
+.history-response{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 1rem;
+}
+
+.preview-response{
+    width: 10%;
+}
