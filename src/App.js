@@ -46,7 +46,7 @@ function App() {
         </div>
 
         <div className="color-view">
-          <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} />
+          <ColorBox backgroundColor={`rgb(${red}, ${green}, ${blue})`} type="main"/>
           <button className='history-button' onClick={saveColor}>Save Color</button>
 
         </div>
