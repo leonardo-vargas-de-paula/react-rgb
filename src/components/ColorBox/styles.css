@@ -1,10 +1,21 @@
-.color-box {
+.color-box-main {
   width: 8rem;
   height: 8rem;
   border-radius: 1.5rem;
 }
 
-.color-box.is-too-light {
+.color-box-history {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+.color-box-main.is-too-light {
+  border: 1px solid;
+  border-color: rgb(136, 135, 135);
+}
+
+.color-box-history.is-too-light {
   border: 1px solid;
   border-color: rgb(136, 135, 135);
 }
