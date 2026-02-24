@@ -74,7 +74,14 @@ body {
   color: #000;
 }
 
-.history-button:hover {
+.history-button:disabled {
+  background-color: #e5e7eb; 
+  color: #9ca3af;            
+  cursor: not-allowed;       
+  filter: none;              
+}
+
+.history-button:not(:disabled):hover {
   filter: brightness(0.9);
 }
 
