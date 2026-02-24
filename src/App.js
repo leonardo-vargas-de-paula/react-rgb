@@ -30,7 +30,11 @@ function App() {
     )
   }
 
-  const backgroundColor = (r,g,b) => `rgb(${r}, ${g}, ${b})`;
+  const backgroundColor = (r, g, b) => `rgb(${r}, ${g}, ${b})`;
+
+  const isColorInHistory = history.some(
+    (rgb) => JSON.stringify(rgb) === JSON.stringify([red, green, blue])
+  );
 
   return (
     <div className="App">
@@ -49,17 +53,18 @@ function App() {
         </div>
 
         <div className="color-view">
-          <ColorBox backgroundColor={backgroundColor(red,green, blue)} type="main"/>
-          <button className='history-button' onClick={saveColor}>Save Color</button>
+          <ColorBox backgroundColor={backgroundColor(red, green, blue)} type="main" />
+          <button className='history-button' onClick={saveColor}
+            disabled={ isColorInHistory }>Save Color</button>
 
         </div>
       </div>
 
-      <hr/>
+      <hr />
 
       <div className="history-container">
         <h2>History</h2>
-        <History data={history} backgroundColor={backgroundColor}/>  
+        <History data={history} backgroundColor={backgroundColor} />
       </div>
 
 
