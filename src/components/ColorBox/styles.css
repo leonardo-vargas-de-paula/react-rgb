@@ -1,9 +1,10 @@
-.color-box{
+.color-box {
   box-sizing: border-box;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .color-box.is-too-light {
   border: 1px solid;
   border-color: rgb(136, 135, 135);
 }
-
