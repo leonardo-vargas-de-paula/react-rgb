@@ -33,6 +33,15 @@ function App() {
     (rgb) => JSON.stringify(rgb) === JSON.stringify([red, green, blue]),
   );
 
+  const generateRandomColor = () => {
+    const randomRed = Math.floor(Math.random() * 256);
+    const randomGreen = Math.floor(Math.random() * 256);
+    const randomBlue = Math.floor(Math.random() * 256);
+    setRed(randomRed);
+    setGreen(randomGreen);
+    setBlue(randomBlue);
+  };
+
   return (
     <div className="App">
       <div className="color-container">
@@ -60,6 +69,7 @@ function App() {
             borderRadius="1.5rem"
           />
           <GenericButton
+            className="save-button"
             backgroundColor="#c3f628"
             color="#000"
             onClick={saveColor}
@@ -67,7 +77,12 @@ function App() {
           >
             Save Color
           </GenericButton>
-          <GenericButton backgroundColor="#a44dff" color="#ffffff">
+          <GenericButton
+            className="random-button"
+            backgroundColor="#a44dff"
+            color="#ffffff"
+            onClick={generateRandomColor}
+          >
             Random
           </GenericButton>
         </div>
