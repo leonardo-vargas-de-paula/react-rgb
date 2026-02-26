@@ -1,0 +1,23 @@
+.generic-button {
+  width: 5.2rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: filter 0.2s;
+  border-color: transparent;
+  color: #000;
+}
+
+.generic-button:disabled {
+  background-color: #e5e7eb; 
+  color: #9ca3af;            
+  cursor: not-allowed;       
+  filter: none;              
+}
+
+.generic-button:not(:disabled):hover {
+  filter: brightness(0.9);
+}
