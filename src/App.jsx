@@ -43,7 +43,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <main className="App">
       <div className="color-container">
         <div className="color-inputs">
           <h3>Red: {red}</h3>
@@ -94,7 +94,7 @@ function App() {
         <h2>History</h2>
         <History data={history} backgroundColor={backgroundColor} />
       </div>
-    </div>
+    </main>
   );
 }
 
