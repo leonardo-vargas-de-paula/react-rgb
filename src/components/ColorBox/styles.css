@@ -10,12 +10,8 @@
   border-radius: 20%;
 }
 
-.color-box-main.is-too-light {
+.color-box.is-too-light {
   border: 1px solid;
   border-color: rgb(136, 135, 135);
 }
 
-.color-box-history.is-too-light {
-  border: 1px solid;
-  border-color: rgb(136, 135, 135);
-}
