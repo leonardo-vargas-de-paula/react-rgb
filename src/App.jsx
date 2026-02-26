@@ -55,7 +55,9 @@ function App() {
         <div className="color-view">
           <ColorBox
             backgroundColor={backgroundColor(red, green, blue)}
-            type="main"
+            width="8rem"
+            height="8rem"
+            borderRadius="1.5rem"
           />
           <GenericButton
             backgroundColor="#c3f628"
