@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import ColorBox from './components/ColorBox';
-import RangeInput from './components/RangeInput';
-import History from './components/History';
-
+import { useState } from "react";
+import ColorBox from "./components/ColorBox";
+import RangeInput from "./components/RangeInput";
+import History from "./components/History";
+import GenericButton from "./components/GenericButton";
 
 function App() {
   const [red, setRed] = useState(0);
@@ -11,52 +11,63 @@ function App() {
 
   const changeToRed = ({ target }) => {
     setRed(parseInt(target.value));
-  }
+  };
 
   const changeToGreen = ({ target }) => {
     setGreen(parseInt(target.value));
-  }
+  };
 
   const changeToBlue = ({ target }) => {
     setBlue(parseInt(target.value));
-  }
+  };
 
   const [history, setHistory] = useState([]);
 
-
   const saveColor = () => {
-    setHistory(h =>
-      [[red, green, blue], ...h]
-    )
-  }
+    setHistory((h) => [[red, green, blue], ...h]);
+  };
 
   const backgroundColor = (r, g, b) => `rgb(${r}, ${g}, ${b})`;
 
   const isColorInHistory = history.some(
-    (rgb) => JSON.stringify(rgb) === JSON.stringify([red, green, blue])
+    (rgb) => JSON.stringify(rgb) === JSON.stringify([red, green, blue]),
   );
 
   return (
     <div className="App">
-
       <div className="color-container">
         <div className="color-inputs">
           <h3>Red: {red}</h3>
           <RangeInput min="0" max="255" value={red} onChange={changeToRed} />
 
-
           <h3>Green: {green}</h3>
-          <RangeInput min="0" max="255" value={green} onChange={changeToGreen} />
+          <RangeInput
+            min="0"
+            max="255"
+            value={green}
+            onChange={changeToGreen}
+          />
 
           <h3>Blue: {blue}</h3>
           <RangeInput min="0" max="255" value={blue} onChange={changeToBlue} />
         </div>
 
         <div className="color-view">
-          <ColorBox backgroundColor={backgroundColor(red, green, blue)} type="main" />
-          <button className='history-button' onClick={saveColor}
-            disabled={ isColorInHistory }>Save Color</button>
-
+          <ColorBox
+            backgroundColor={backgroundColor(red, green, blue)}
+            type="main"
+          />
+          <GenericButton
+            backgroundColor="#c3f628"
+            color="#000"
+            onClick={saveColor}
+            disabled={isColorInHistory}
+          >
+            Save Color
+          </GenericButton>
+          <GenericButton backgroundColor="#a44dff" color="#ffffff">
+            Random
+          </GenericButton>
         </div>
       </div>
 
@@ -66,16 +77,8 @@ function App() {
         <h2>History</h2>
         <History data={history} backgroundColor={backgroundColor} />
       </div>
-
-
-
-
     </div>
-
   );
 }
-
-
-
 
 export default App;
